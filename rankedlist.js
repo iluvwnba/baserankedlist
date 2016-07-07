@@ -31,7 +31,8 @@ function updateTable(dataSet, tableId){
 	/* Set all the cells in columns with THEHEADING in the heading to red */
 	columnTh = $("table th:contains('Item')"); // Find the heading with the text THEHEADING
 	columnIndex = columnTh.index() + 1; // Get the index & increment by 1 to match nth-child indexing
-	$('table tr td:nth-child(' + columnIndex + ')').css("color", "#F00"); // Set all the elements with that index in a tr red
+	var allData = $('table tr td:nth-child(' + columnIndex + ')');
+
 
 
 }
