@@ -1,0 +1,227 @@
+body {
+    padding-top: 50px;
+}
+
+path {
+    stroke: #fff;
+}
+
+path:hover {
+    opacity:0.9;
+}
+
+rect:hover {
+    fill:blue;
+}
+
+.axis {
+    font: 10px sans-serif;
+}
+
+.legend tr{
+    border-bottom:1px solid grey;
+}
+
+.legend tr:first-child{
+    border-top:1px solid grey;
+}
+
+.axis path,
+
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.legend{
+    margin-bottom:76px;
+    display:inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+.legend td{
+    padding:4px 5px;
+    vertical-align:bottom;
+}
+
+.legendFreq, .legendPerc{
+    align:right;
+    width:50px;
+}
+
+#svgg .title{
+    font: 30px sans-serif;
+}
+
+div#dashboard {
+    width: 800px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+div#svgg {
+    /*margin: 60px auto;*/
+}
+
+div#hist{
+    /*overflow-x: scroll;*/
+    overflow-y: hidden;
+    width: auto;
+}
+
+.tools-img{
+    margin: 50px auto;
+    padding: 30px;
+    height: 250px;
+    width: 400px;
+}
+
+.top-buffer { margin-top:40px; }
+
+#hist .axis text {
+    font: 15px sans-serif;
+}
+
+#hist .axis path {
+    display: none;
+}
+
+#hist .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+#hist .grid-background {
+    fill: #ddd;
+}
+
+#hist .grid line,
+#hist .grid path {
+    fill: none;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+}
+
+#hist .grid .minor.tick line {
+    stroke-opacity: .5;
+}
+
+#hist .brush .extent {
+    stroke: #000;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+}
+
+#hist .title {
+    font: 30px sans-serif;
+}
+
+.comments-wrapper-div {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 600px;
+}
+
+.btn{
+    float: right;
+}
+
+.container-margin-top{
+    margin-top: 30px;
+}
+
+.overall-text{
+    font-size:172px;
+    color: white;
+}
+ /* Liquid Gauge */
+.liquidFillGaugeText { 
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+#gauge .title {
+    font: 30px sans-serif;
+}
+
+/* Calendar */
+
+#chart{
+    /*width: 450px;*/
+    margin: 0 auto;
+    font: 1.1em sans-serif;
+}
+#chart .background {
+    fill: #eee;
+}
+
+#chart line {
+    stroke: #fff;
+}
+
+#chart text.active {
+    fill: red;
+}
+
+#chart .day {
+    fill: #fff;
+    stroke: #ccc;
+}
+
+#chart .month {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 4px;
+}
+#chart .year-title {
+    font-size: 2em;
+}
+
+#chart .month-title {
+    font-size: 2em;
+}
+
+/* color ranges */
+    #chart .RdYlGn .q0-11{fill:rgb(255,0,0)}
+    #chart .RdYlGn .q1-11{fill:rgb(255,51,0)}
+    #chart .RdYlGn .q2-11{fill:rgb(255,102,0)}
+    #chart .RdYlGn .q3-11{fill:rgb(255,153,0)}
+    #chart .RdYlGn .q4-11{fill:rgb(255,204,0)}
+    #chart .RdYlGn .q5-11{fill:rgb(255,255,0)}
+    #chart .RdYlGn .q6-11{fill:rgb(204,255,0)}
+    #chart .RdYlGn .q7-11{fill:rgb(153,255,0)}
+    #chart .RdYlGn .q8-11{fill:rgb(102,255,0)}
+    #chart .RdYlGn .q9-11{fill:rgb(51,255,0)}
+    #chart .RdYlGn .q10-11{fill:rgb(0,255,0)}
+
+/* hover info */
+#tooltip {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    padding: 10px;
+}
+
+.searched {
+    background-color: red;
+}
+
+/*searchbar*/
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+    border-right:0;
+    box-shadow:0 0 0;
+    border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
