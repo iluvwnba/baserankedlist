@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>EDH Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/webchat.css">
+
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Digital Insights</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="rankedlist.html">Ranked List</a></li>
+                <li><a href="xchanneldashboard.html">Dashboard</a></li>
+                <li><a href="sankey.html">Sankey</a></li>
+                <li><a href="xwordcloud.html">Word Cloud</a></li>
+                <li><a href="ageprofile.html">Age Profile</a></li>
+                <li><a href="geo-similarity.html">Geo-Similarity</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<!-- D3.js is incompatible with Internet Explorer 8 or older, this will notify the user if they use said browsers. -->
+<!--[if lte IE 8]>
+<h3>This browser is incompatible with the webpage, please use the latest version of Internet Explorer, Firefox or Chrome to view the page.</h3>
+<! <![endif]-->
+<div class="container container-margin-top">
+
+    <script src="js/jquery-1.12.2.js"></script>
+    <script src="d3/d3.v3.min.js"></script>
+    <script src="js/wordcloud.js"></script>
+    <script src="js/initoverview.js"></script>
+    <div class="col-md-3">
+        <div class="row">
+            <div class="span12">
+                <table class="table-condensed table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th colspan="7">
+                            <span class="btn-group">
+                                <a class="btn"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                                <a class="btn active">June 2016</a>
+                                <a class="btn"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                            </span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Su</th>
+                        <th>Mo</th>
+                        <th>Tu</th>
+                        <th>We</th>
+                        <th>Th</th>
+                        <th>Fr</th>
+                        <th>Sa</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="text-muted">29</td>
+                        <td class="text-muted">30</td>
+                        <td class="text-muted">31</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td class="btn-primary"><strong>20</strong></td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td class="text-muted">1</td>
+                        <td class="text-muted">2</td>
+                        <td class="text-muted">3</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="scatter" class="col-md-9"><img class="img-responsive" src="https://stevenyeung.com/uploads/2015/08/scatter-plot-roadside-increasing.png" alt=""></div>
+    <div id="svgg" class="col-md-9 container-margin-top"></div>
+
+
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery-1.12.2.js"></script>
+<script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

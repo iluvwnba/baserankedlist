@@ -225,3 +225,10 @@ div#hist{
     border:0;
     background:transparent;
 }
+
+.div-block-test{
+    outline: 1px solid gray;
+    height: 400px;
+}
+
+

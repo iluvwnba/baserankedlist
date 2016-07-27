@@ -1,0 +1,93 @@
+[{
+  "userName": "Tom",
+  "activityID": "12345",
+  "startDate": "01/20/2016 00:49:34 AM",
+  "waitTime": "00:00:48",
+  "chatDuration": "00:17:21",
+  "abandon": "No",
+  "freq": {
+    "g": "1"
+  },
+  "wc": [{
+    "name": "great",
+    "size": "1",
+    "type": "g",
+    "usage": "Not Bad at all good great great",
+    "question": "Are biscuits exempt from the real ewqew ewqewqeqweqweqw tax?"
+  }]
+}, {
+  "userName": "Hugh",
+  "activityID": "12348",
+  "startDate": "01/21/2016 01:49:21 AM",
+  "waitTime": "00:00:23",
+  "chatDuration": "00:23:56",
+  "abandon": "No",
+  "freq": {
+    "g": "1"
+  },
+  "wc": [{
+    "name": "give",
+    "size": "1",
+    "type": "g",
+    "usage": "Didn’t give the answer I was looking for.",
+    "question": "Am I eligible to claim relief on beer bought on a business trip?"
+  }]
+}, {
+  "userName": "Billy",
+  "activityID": "12349",
+  "startDate": "01/22/2016 02:20:05 AM",
+  "waitTime": "00:00:18",
+  "chatDuration": "00:15:12",
+  "abandon": "No",
+  "freq": {
+    "b": "1",
+    "g": "1"
+  },
+  "wc": [{
+    "name": "unable",
+    "size": "1",
+    "type": "b",
+    "usage": "You were unable to help, I had to call another helpline.",
+    "question": "My computer isnt working."
+  }, {
+    "name": "help",
+    "size": "1",
+    "type": "g",
+    "usage": "You were unable to help, I had to call another helpline.",
+    "question": "My computer isnt working."
+  }]
+}, {
+  "userName": "Alex",
+  "activityID": "12350",
+  "startDate": "01/23/2016 03:38:36 AM",
+  "waitTime": "00:00:28",
+  "chatDuration": "00:11:17",
+  "abandon": "No",
+  "freq": {
+    "b": "1"
+  },
+  "wc": [{
+    "name": "rubbish",
+    "size": "1",
+    "type": "b",
+    "usage": "Rubbish!",
+    "question": "How do I set up a direct debit for my gas bill?"
+  }]
+}, {
+  "userName": "Tom",
+  "activityID": "12345",
+  "startDate": "01/24/2016 04:49:34 AM",
+  "waitTime": "00:00:48",
+  "chatDuration": "00:17:21",
+  "abandon": "No",
+  "freq": {
+    "g": "1"
+  },
+  "wc": [{
+    "name": "not bad",
+    "size": "1",
+    "type": "g",
+    "usage": "Not Bad at all good great great",
+    "question": "Are biscuits exempt from tax?"
+  }]
+}]

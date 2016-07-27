@@ -13,27 +13,21 @@ function initialTableLoad(tableId){
 function updateTable(dataSet, tableId){
 
 	d3.select('#' + tableId + 'table').selectAll("tbody").html("");
-	d3.select('#' + tableId + 'table').append("tbody").selectAll("tr")
-			.data(dataSet).enter()
-			.append("tr")
-			.selectAll("td")
-			.data(function(d) {
-				return [d.Item, d.Count]
-			}).enter()
-			.append('td')
-			.text(function(d) {
-				console.log(d);
-				return d;
-			});
 
+	var tbody = d3.select('#' + tableId + 'table').append("tbody");
+	dataSet.forEach(function(row) {
+		var tr = tbody.append("tr");
 
-
-	/* Set all the cells in columns with THEHEADING in the heading to red */
-	columnTh = $("table th:contains('Item')"); // Find the heading with the text THEHEADING
-	columnIndex = columnTh.index() + 1; // Get the index & increment by 1 to match nth-child indexing
-	var allData = $('table tr td:nth-child(' + columnIndex + ')');
-
-
-
+		tr.append('td').text(row["Item"])
+		.append("span")
+		.attr("class", function(){
+			var sentiment = "";
+			if (row["Sentiment"] == "g") sentiment = 'glyphicon glyphicon-chevron-up';
+			else if (row["Sentiment"] == "n") sentiment = 'glyphicon glyphicon-minus';
+			else if (row["Sentiment"] == "b") sentiment = 'glyphicon glyphicon-chevron-down';
+			return 'pull-right ' + sentiment;
+		});
+		tr.append('td').text(row["Count"]);
+	})
 }
 

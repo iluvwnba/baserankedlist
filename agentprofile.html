@@ -9,12 +9,14 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>EDH Ranked List</title>
+    <title>EDH Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/webchat.css">
+
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 
 
 </head>
@@ -50,52 +52,58 @@
 <h3>This browser is incompatible with the webpage, please use the latest version of Internet Explorer, Firefox or Chrome to view the page.</h3>
 <! <![endif]-->
 <div class="container container-margin-top">
+
+    <script src="js/jquery-1.12.2.js"></script>
+    <script src="d3/d3.v3.min.js"></script>
+
+
     <div class="row">
         <div class="input-group">
-            <div class="input-group-btn search-panel">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <span id="search_concept">Sentiment Filter</span> <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-
-                    <li class="divider"></li>
-                    <li><a href="#">Anything</a></li>
-                </ul>
-            </div>
             <input type="hidden" name="search_param" value="all" id="search_param">
-            <input id="searchInput" type="text" class="form-control" name="x" placeholder="Search term...">
+            <input id="searchInput" type="text" class="form-control" name="x" placeholder="Search for agent...">
             <span class="input-group-btn">
                 <button id="searchButton" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
             </span>
         </div>
     </div>
-    <div class="text-center alert alert-dismissible hidden" role="alert" id="searchResult">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    </div>
-    <div class="row">
-        <div id="twitter" class="col-md-4">
-            <h2>Twitter</h2>
-        </div>
-        <div id="taxcredits" class="col-md-4">
-            <h2>Tax Credit Survey</h2>
-        </div>
-        <div id="webchat" class="col-md-4">
-            <h2>Web Chat</h2>
-        </div>
-    </div>
-    <script src="js/jquery-1.12.2.js"></script>
-    <script src="js/fuse.js"></script>
-    <script src="d3/d3.v3.min.js"></script>
-    <script src="rankedlist.js"></script>
-    <script src="init.js"></script>
 
+    <div class="row container-margin-top">
+        <div id="agent-info" class="col-md-12">
+            <h2>Advisor ID</h2>
+            <h4>Search for an advisor</h4>
+        </div>
+    </div>
+
+    <div class="row container-margin-top">
+        <div id="kcom-dms-wrapper" class="col-md-5 div-block-test">
+            <h4>Kcom stats</h4>
+            <h4>DMS stats</h4>
+        </div>
+        <div id="svgg" class="col-md-5 col-md-offset-1 div-block-test">
+        </div>
+    </div>
+
+    <div class="row container-margin-top">
+        <div id="similar-advisor" class="col-md-5">
+            <h4>Similar Advisors</h4>
+        </div>
+        <div id="advisor-stats" class="col-md-5 col-md-offset-1 div-block-test">
+            <h4>Performance Matrix</h4>
+        </div>
+    </div>
 </div><!-- /.container -->
 
+    <script src="js/radar.js"></script>
+    <script src="js/radarinit.js"></script>
+    <script src="js/agentwordcloud.js"></script>
+    <script src="js/initoverview.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="js/initagentprofile.js"></script>
+    <script src="js/live.js"></script>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery-1.12.2.js"></script>
 <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
