@@ -1,5 +1,5 @@
 //Practically all this code comes from https://github.com/alangrafu/radar-chart-d3
-//I only made some additions and aesthetic adjustments to make the chart look better
+//I only made some additions and aesthetic adjustments to make the bulletChart look better
 //(of course, that is only my point of view)
 //Such as a better placement of the titles at each line end,
 //adding numbers that reflect what each circular level stands for
@@ -130,7 +130,7 @@ var RadarChart = {
 				.data([dataValues])
 				.enter()
 				.append("polygon")
-				.attr("class", "radar-chart-serie"+series)
+				.attr("class", "radar-bulletChart-serie"+series)
 				.style("stroke-width", "2px")
 				.style("stroke", cfg.color(series))
 				.attr("points",function(d) {
@@ -165,7 +165,7 @@ var RadarChart = {
 			g.selectAll(".nodes")
 				.data(y).enter()
 				.append("svg:circle")
-				.attr("class", "radar-chart-serie"+series)
+				.attr("class", "radar-bulletChart-serie"+series)
 				.attr('r', cfg.radius)
 				.attr("alt", function(j){return Math.max(j.value, 0)})
 				.attr("cx", function(j, i){

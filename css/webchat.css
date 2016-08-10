@@ -231,4 +231,20 @@ div#hist{
     height: 400px;
 }
 
+#kcom-dms-wrapper {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: auto;
+    padding-top: 40px;
+    position: relative;
+}
 
+#kcom-dms-wrapper .bullet { font: 10px sans-serif; }
+#kcom-dms-wrapper .bullet .marker { stroke: #000; stroke-width: 2px; }
+#kcom-dms-wrapper .bullet .tick line { stroke: #666; stroke-width: .5px; }
+#kcom-dms-wrapper .bullet .range.s0 { fill: rgb(255, 127, 14); }
+#kcom-dms-wrapper .bullet .range.s1 { fill: #ddd; }
+#kcom-dms-wrapper .bullet .range.s2 { fill: #ccc; }
+#kcom-dms-wrapper .bullet .measure.s0 { fill: lightsteelblue; }
+#kcom-dms-wrapper .bullet .measure.s1 { fill: steelblue; }
+#kcom-dms-wrapper .bullet .title { font-size: 14px; font-weight: bold; }
+#kcom-dms-wrapper .bullet .subtitle { fill: #999; }

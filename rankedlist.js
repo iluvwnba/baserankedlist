@@ -5,7 +5,7 @@
 
 function initialTableLoad(tableId){
 	d3.select("#" + tableId)
-		.append("table").attr("class", "table table-striped table-hover table-bordered container-margin-top").attr('Id', tableId +'table')
+		.append("table").attr("class", "table table-striped table-hover table-bordered container-bulletMargin-top").attr('Id', tableId +'table')
 		.append("thead")
 		.append("tr").selectAll("th").data(["Item", "Count"]).enter().append("th").text(function(d){return d});;
 }

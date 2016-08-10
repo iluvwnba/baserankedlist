@@ -1,3 +1,23 @@
+//Select the div with id=svgg - this will contain the svg
+var container = d3.select("#svgg");
+
+//Set the height and width to screen height / width
+var width = 440;
+var height = 440;
+    
+//Add our svg to the div container
+var svg = container.append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("preserveAspectRatio", "xMidYMin meet")
+        .attr("viewBox", "0 0 " + width + " " + height) //add viewbox for graphic elements
+        .classed("svg-content-responsive", true)
+        /*.call(    //Scrolling + zooming in attributes
+                d3.behavior.zoom()
+                        .scaleExtent([1,10])
+                        .on("zoom", zoom)
+        )*/
+        .append("g");
 function createChart(data){
 
     var tdata = [];
@@ -38,15 +58,12 @@ function createChart(data){
     root = data;
 
 
-    //Select the div with id=svgg - this will contain the svg
-    var container = d3.select("div#svgg");
+
 
     //Empty the div container of any contents
-    container.html("");
+    //container.html("");
 
-    //Set the height and width to screen height / width
-    var width = 440;
-    var height = 440;
+
 
 
     var diameter = 320;
@@ -66,19 +83,7 @@ function createChart(data){
             .padding(2); //set padding between circles
 
 
-    //Add our svg to the div container
-    var svg = container.append("svg")
-            .attr("width", width)
-            .attr("height", height)
-            .attr("preserveAspectRatio", "xMidYMin meet")
-            .attr("viewBox", "0 0 " + width + " " + height) //add viewbox for graphic elements
-            .classed("svg-content-responsive", true)
-            /*.call(    //Scrolling + zooming in attributes
-                    d3.behavior.zoom()
-                            .scaleExtent([1,10])
-                            .on("zoom", zoom)
-            )*/
-            .append("g");
+
 
     //Add a title to the wordcloud
   /*
@@ -114,11 +119,18 @@ function createChart(data){
 
     //Add circle graphic
     node.append("circle")
+            .attr("r", 0)
+            .transition()
+            .duration(500)
             .attr("r", function(d) { return d.r; }) //return radius of circle determined by layout, number of bubbles & frequency - max diameter 550
             .style("fill", function(d) {return color(d.type);});
 
     //Add label to bubble
     node.append("text")
+            .attr("fill-opacity", 0)
+            .transition()
+            .duration(500)
+            .attr("fill-opacity", 1)
             .attr("dy", ".3em")  //position text relative to y position
             .style("font-family","sans-serif")  //set font family
             .style("text-anchor", "middle")  //set text to center

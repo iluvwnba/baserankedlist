@@ -21,9 +21,14 @@ var agentData = (function() {
 	return json;
 })();
 
+var advisorDMS;
+
+$.getJSON("advisorDMS.json", function(json){ advisorDMS = json});
+
 var agentIds = agentData.advisors.map(function (d) {
-	return d.id;
+	return d.id.toString();
 });
+var radar = initRadar();
 
 getOverallStats(agentData.advisors);
 var filteredData = [];
@@ -39,9 +44,10 @@ $(function() {
 
 		setinfo(filteredData[0]);
 		//rebuild vis
-		drawRadar(getMeasures(filteredData[0]));
+		drawRadar(getMeasures(filteredData[0]), true);
 		drawSimilarAgents(filteredData[0]);
-		createChart(filteredData[0].info.wc)
+		createChart(filteredData[0].info.wc);
+		drawBulletChart(filteredData[0].id);
 	});
 	$('#searchInput').keypress(function(e){
 		if(e.which == 13){//Enter key pressed
@@ -65,7 +71,8 @@ function bindButton() {
 			var wrapper = [];
 			wrapper.push(getMeasures(filteredData[0])[0]);
 			wrapper.push(getMeasures(compareData[0])[0]);
-			drawRadar(wrapper);
+			drawRadar(wrapper, false);
+			drawBulletChart(filteredData[0].id, compareData[0].id);
 		})
 	});
 }
@@ -125,13 +132,50 @@ function setinfo(agent){
 	$('#agent-info h4').text(agent.id);
 }
 
-function drawRadar(d){
+function initRadar(){
 	var mycfg = {
 		maxValue: 1,
 		levels: 10,
 		ExtraWidthX: 200
 	};
-	RadarChart.draw("#advisor-stats", d, mycfg);
+
+	var d = [
+		[
+			{axis:"Chat Throughput",value:1},
+			{axis:"Chat Length",value:1},
+			{axis:"Query Resolution",value:1},
+			{axis:"Stopped Call",value:1},
+			{axis:"Knowledge Level",value:1},
+			{axis:"Customer Satisfaction",value:1}
+		],
+		[
+			{axis:"Chat Throughput",value:1},
+			{axis:"Chat Length",value:1},
+			{axis:"Query Resolution",value:1},
+			{axis:"Stopped Call",value:1},
+			{axis:"Knowledge Level",value:1},
+			{axis:"Customer Satisfaction",value:1}
+		]
+	];
+
+	return RadarChart.init("#advisor-stats", d, mycfg);
+}
+function drawRadar(d, refresh){
+	radar.draw(d, refresh);
+}
+
+function drawBulletChart(d,s){
+	var comparedAdvisor;
+	if(s == null || advisorDMS[s] == undefined) comparedAdvisor = 0;
+	else comparedAdvisor = advisorDMS[s];
+	var average = 3154;
+	var advisorCount;
+	if(advisorDMS[d] == undefined) advisorCount = 0;
+	else advisorCount = advisorDMS[d];
+	var bulletData = [
+		{"title":"DMS Count","subtitle":"","ranges":[comparedAdvisor],"measures":[advisorCount],"markers":[average]}
+	];
+	loadBulletChartData(bulletData);
 }
 
 function getOverallStats(agentList){
