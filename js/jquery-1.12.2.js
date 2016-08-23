@@ -3728,7 +3728,7 @@ jQuery( function() {
 		// Check if natively block-level elements act like inline-block
 		// elements when setting their display to 'inline' and giving
 		// them layout
-		div.style.cssText = "display:inline;margin:0;border:0;padding:1px;width:1px;zoom:1";
+		div.style.cssText = "display:inline;bulletMargin:0;border:0;padding:1px;width:1px;zoom:1";
 
 		support.inlineBlockNeedsLayout = val = div.offsetWidth === 3;
 		if ( val ) {
@@ -4275,13 +4275,13 @@ jQuery.fn.extend( {
 		// Check if elements with layout shrink-wrap their children
 		if ( typeof div.style.zoom !== "undefined" ) {
 
-			// Reset CSS: box-sizing; display; margin; border
+			// Reset CSS: box-sizing; display; bulletMargin; border
 			div.style.cssText =
 
 				// Support: Firefox<29, Android 2.3
 				// Vendor-prefix box-sizing
 				"-webkit-box-sizing:content-box;-moz-box-sizing:content-box;" +
-				"box-sizing:content-box;display:block;margin:0;border:0;" +
+				"box-sizing:content-box;display:block;bulletMargin:0;border:0;" +
 				"padding:1px;width:1px;zoom:1";
 			div.appendChild( document.createElement( "div" ) ).style.width = "5px";
 			shrinkWrapBlocksVal = div.offsetWidth !== 3;
@@ -6542,7 +6542,7 @@ var documentElement = document.documentElement;
 
 	container = document.createElement( "div" );
 	container.style.cssText = "border:0;width:8px;height:0;top:0;left:-9999px;" +
-		"padding:0;margin-top:1px;position:absolute";
+		"padding:0;bulletMargin-top:1px;position:absolute";
 	div.innerHTML = "";
 	container.appendChild( div );
 
@@ -6617,7 +6617,7 @@ var documentElement = document.documentElement;
 			// Vendor-prefix box-sizing
 			"-webkit-box-sizing:border-box;box-sizing:border-box;" +
 			"position:relative;display:block;" +
-			"margin:auto;border:1px;padding:1px;" +
+			"bulletMargin:auto;border:1px;padding:1px;" +
 			"top:1%;width:50%";
 
 		// Support: IE<9
@@ -6638,18 +6638,18 @@ var documentElement = document.documentElement;
 			pixelMarginRightVal = ( divStyle || { marginRight: "4px" } ).marginRight === "4px";
 
 			// Support: Android 2.3 only
-			// Div with explicit width and no margin-right incorrectly
-			// gets computed margin-right based on width of container (#3333)
-			// WebKit Bug 13343 - getComputedStyle returns wrong value for margin-right
+			// Div with explicit width and no bulletMargin-right incorrectly
+			// gets computed bulletMargin-right based on width of container (#3333)
+			// WebKit Bug 13343 - getComputedStyle returns wrong value for bulletMargin-right
 			contents = div.appendChild( document.createElement( "div" ) );
 
-			// Reset CSS: box-sizing; display; margin; border; padding
+			// Reset CSS: box-sizing; display; bulletMargin; border; padding
 			contents.style.cssText = div.style.cssText =
 
 				// Support: Android 2.3
 				// Vendor-prefix box-sizing
 				"-webkit-box-sizing:content-box;-moz-box-sizing:content-box;" +
-				"box-sizing:content-box;display:block;margin:0;border:0;padding:0";
+				"box-sizing:content-box;display:block;bulletMargin:0;border:0;padding:0";
 			contents.style.marginRight = contents.style.width = "0";
 			div.style.width = "1px";
 
@@ -6673,7 +6673,7 @@ var documentElement = document.documentElement;
 			div.style.display = "";
 			div.innerHTML = "<table><tr><td></td><td>t</td></tr></table>";
 			contents = div.getElementsByTagName( "td" );
-			contents[ 0 ].style.cssText = "margin:0;border:0;padding:0;display:none";
+			contents[ 0 ].style.cssText = "bulletMargin:0;border:0;padding:0;display:none";
 			reliableHiddenOffsetsVal = contents[ 0 ].offsetHeight === 0;
 			if ( reliableHiddenOffsetsVal ) {
 				contents[ 0 ].style.display = "";
@@ -6727,7 +6727,7 @@ if ( window.getComputedStyle ) {
 
 			// A tribute to the "awesome hack by Dean Edwards"
 			// Chrome < 17 and Safari 5.0 uses "computed value"
-			// instead of "used value" for margin-right
+			// instead of "used value" for bulletMargin-right
 			// Safari 5.1.7 (at least) returns percentage for a larger set of values,
 			// but width seems to be reliably pixels
 			// this is against the CSSOM draft spec:
@@ -6956,8 +6956,8 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 
 	for ( ; i < 4; i += 2 ) {
 
-		// both box models exclude margin, so add it if we want it
-		if ( extra === "margin" ) {
+		// both box models exclude bulletMargin, so add it if we want it
+		if ( extra === "bulletMargin" ) {
 			val += jQuery.css( elem, extra + cssExpand[ i ], true, styles );
 		}
 
@@ -6968,8 +6968,8 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 				val -= jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
 			}
 
-			// at this point, extra isn't border nor margin, so remove border
-			if ( extra !== "margin" ) {
+			// at this point, extra isn't border nor bulletMargin, so remove border
+			if ( extra !== "bulletMargin" ) {
 				val -= jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
 			}
 		} else {
@@ -7525,7 +7525,7 @@ function genFx( type, includeWidth ) {
 	includeWidth = includeWidth ? 1 : 0;
 	for ( ; i < 4 ; i += 2 - includeWidth ) {
 		which = cssExpand[ i ];
-		attrs[ "margin" + which ] = attrs[ "padding" + which ] = type;
+		attrs[ "bulletMargin" + which ] = attrs[ "padding" + which ] = type;
 	}
 
 	if ( includeWidth ) {
@@ -10821,7 +10821,7 @@ jQuery.fn.extend( {
 		}
 
 		// Subtract parent offsets and element margins
-		// note: when an element has margin: auto the offsetLeft and marginLeft
+		// note: when an element has bulletMargin: auto the offsetLeft and marginLeft
 		// are the same in Safari causing offset.left to incorrectly be 0
 		return {
 			top:  offset.top  - parentOffset.top - jQuery.css( elem, "marginTop", true ),
@@ -10895,10 +10895,10 @@ jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 	jQuery.each( { padding: "inner" + name, content: type, "": "outer" + name },
 	function( defaultExtra, funcName ) {
 
-		// margin is only for outerHeight, outerWidth
+		// bulletMargin is only for outerHeight, outerWidth
 		jQuery.fn[ funcName ] = function( margin, value ) {
 			var chainable = arguments.length && ( defaultExtra || typeof margin !== "boolean" ),
-				extra = defaultExtra || ( margin === true || value === true ? "margin" : "border" );
+				extra = defaultExtra || ( margin === true || value === true ? "bulletMargin" : "border" );
 
 			return access( this, function( elem, type, value ) {
 				var doc;

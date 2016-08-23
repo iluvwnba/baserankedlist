@@ -22,7 +22,7 @@ var d = [
 	]
 ];
 
-//Options for the Radar chart, other than default
+//Options for the Radar bulletChart, other than default
 var mycfg = {
 	w: w,
 	h: h,
@@ -31,5 +31,5 @@ var mycfg = {
 	ExtraWidthX: 300
 };
 
-//Call function to draw the Radar chart
+//Call function to draw the Radar bulletChart
 //Will expect that data is in %'s
