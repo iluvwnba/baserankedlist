@@ -22,7 +22,7 @@ var agentData = (function() {
 })();
 
 var agentIds = agentData.advisors.map(function (d) {
-	return d.id;
+	return d.id.toString();
 });
 
 getOverallStats(agentData.advisors);
